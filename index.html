@@ -201,28 +201,34 @@
       /* Proyecto con imagen al costado */
       .project.has-media {
         display: grid;
-        grid-template-columns: 1fr 200px;
-        gap: 22px;
-        align-items: start;
+        grid-template-columns: 1fr 270px;
+        gap: 24px;
+        align-items: center;
       }
 
       .project-media {
         border: 1px solid var(--border);
-        border-radius: 8px;
+        border-radius: 10px;
         overflow: hidden;
         background: var(--bg-badge);
-        aspect-ratio: 4 / 5;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project:hover .project-media {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
       }
 
       .project-media img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
         display: block;
       }
 
       /* Si la imagen no existe, se muestra un recuadro vacío */
       .project-media.empty {
+        aspect-ratio: 4 / 3;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -242,8 +248,12 @@
         }
 
         .project-media {
-          aspect-ratio: 16 / 9;
           order: -1;
+        }
+
+        .project-media img {
+          max-height: 380px;
+          object-fit: contain;
         }
       }
 
@@ -586,7 +596,7 @@
           </div>
           <div class="project-media">
             <img
-              src="img/concesionaria.png"
+              src="img/Concesionaria.png"
               alt="Captura del Sistema de Gestión de Concesionarias"
               loading="lazy"
               onerror="this.parentElement.classList.add('empty'); this.remove();"
