@@ -198,6 +198,55 @@
         margin-bottom: 18px;
       }
 
+      /* Proyecto con imagen al costado */
+      .project.has-media {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        gap: 22px;
+        align-items: start;
+      }
+
+      .project-media {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--bg-badge);
+        aspect-ratio: 4 / 5;
+      }
+
+      .project-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Si la imagen no existe, se muestra un recuadro vacío */
+      .project-media.empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style: dashed;
+        font-family: var(--font-mono);
+        font-size: 11.5px;
+        color: var(--text-faint);
+      }
+
+      .project-media.empty::after {
+        content: "imagen";
+      }
+
+      @media (max-width: 600px) {
+        .project.has-media {
+          grid-template-columns: 1fr;
+        }
+
+        .project-media {
+          aspect-ratio: 16 / 9;
+          order: -1;
+        }
+      }
+
       .placeholder-note {
         display: inline-block;
         margin-top: 10px;
@@ -364,7 +413,8 @@
       <section id="proyectos">
         <h2>Proyectos</h2>
 
-        <div class="project">
+        <div class="project has-media">
+          <div class="project-body">
           <div class="project-head">
             <h3>Coffee System</h3>
             <div class="project-links">
@@ -414,6 +464,15 @@
             <span class="tech-pill"
               ><span class="dot" style="background: #dd0031"></span>Angular</span
             >
+          </div>
+          </div>
+          <div class="project-media">
+            <img
+              src="img/coffee-system.png"
+              alt="Captura de Coffee System"
+              loading="lazy"
+              onerror="this.parentElement.classList.add('empty'); this.remove();"
+            />
           </div>
         </div>
 
@@ -467,7 +526,8 @@
             >
           </div>
         </div>
-        <div class="project">
+        <div class="project has-media">
+          <div class="project-body">
           <div class="project-head">
             <h3>Sistema de Gestion de Concesionarias</h3>
             <div class="project-links">
@@ -496,7 +556,10 @@
             llevar un registro de clientes y vendedores asociados a cada
             operación. Pensado para escalar a múltiples sucursales,
             centralizando el control de inventario y ventas en una misma
-            plataforma.
+            plataforma. Está construido sobre una arquitectura de
+            microservicios, donde cada módulo funciona como un servicio
+            independiente que puede desarrollarse, desplegarse y escalarse por
+            separado.
           </p>
           <div class="tech-row">
             <span class="tech-pill"
@@ -515,6 +578,19 @@
             <span class="tech-pill"
               ><span class="dot" style="background: #dd0031"></span>Angular</span
             >
+            <span class="tech-pill"
+              ><span class="dot" style="background: #d7a44c"></span
+              >Microservicios</span
+            >
+          </div>
+          </div>
+          <div class="project-media">
+            <img
+              src="img/concesionaria.png"
+              alt="Captura del Sistema de Gestión de Concesionarias"
+              loading="lazy"
+              onerror="this.parentElement.classList.add('empty'); this.remove();"
+            />
           </div>
         </div>
       </section>
