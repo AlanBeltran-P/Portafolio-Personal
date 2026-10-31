@@ -347,7 +347,8 @@
         color: var(--text-faint);
       }
 
-      @media (max-width: 600px) {
+      /* Tablets y celulares: imagen/panel arriba del texto, a todo el ancho */
+      @media (max-width: 760px) {
         .project.has-media {
           grid-template-columns: 1fr;
         }
@@ -359,6 +360,10 @@
         .project-media img {
           max-height: 380px;
           object-fit: contain;
+        }
+
+        .demo-panel {
+          aspect-ratio: 16 / 9;
         }
       }
 
@@ -477,6 +482,26 @@
         }
         section {
           padding-top: 44px;
+        }
+
+        main {
+          padding: 0 16px 80px;
+        }
+
+        .topbar {
+          padding: 24px 16px 0;
+        }
+
+        .project {
+          padding: 18px;
+        }
+
+        .demo-url {
+          font-size: 10px;
+        }
+
+        .demo-title {
+          font-size: 15px;
         }
       }
     </style>
