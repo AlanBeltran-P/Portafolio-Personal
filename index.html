@@ -347,14 +347,10 @@
         color: var(--text-faint);
       }
 
-      /* Tablets y celulares: imagen/panel arriba del texto, a todo el ancho */
+      /* Tablets y celulares: imagen/panel debajo del texto, a todo el ancho */
       @media (max-width: 760px) {
         .project.has-media {
           grid-template-columns: 1fr;
-        }
-
-        .project-media {
-          order: -1;
         }
 
         .project-media img {
