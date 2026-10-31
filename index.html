@@ -251,7 +251,7 @@
         text-decoration: none;
       }
 
-      .project:hover .demo-panel,
+      .project:hover .demo-panel:not(.is-wip),
       .demo-panel:focus-visible {
         border-color: var(--accent);
       }
@@ -321,7 +321,7 @@
         transition: transform 0.3s ease;
       }
 
-      .demo-panel:hover .demo-icon {
+      .demo-panel:not(.is-wip):hover .demo-icon {
         transform: scale(1.08);
       }
 
@@ -602,17 +602,25 @@
             >
           </div>
           </div>
-          <div class="project-media">
-            <img
-              src="img/coffee-system.png"
-              alt="Captura de Coffee System"
-              loading="lazy"
-              onerror="this.parentElement.classList.add('empty'); this.remove();"
-            />
+          <div class="project-media demo-panel is-wip">
+            <div class="demo-bar">
+              <span class="demo-dots"><i></i><i></i><i></i></span>
+              <span class="demo-url">próximamente</span>
+            </div>
+            <div class="demo-body">
+              <span class="demo-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 6l-6 6 6 6M16 6l6 6-6 6" />
+                </svg>
+              </span>
+              <span class="demo-title">En desarrollo</span>
+              <span class="demo-hint">Interfaz gráfica en desarrollo</span>
+            </div>
           </div>
         </div>
 
-        <div class="project">
+        <div class="project has-media">
+          <div class="project-body">
           <div class="project-head">
             <h3>Gestión de Turnos</h3>
             <div class="project-links">
@@ -660,6 +668,22 @@
             <span class="tech-pill"
               ><span class="dot" style="background: #7fc4e8"></span>Docker</span
             >
+          </div>
+          </div>
+          <div class="project-media demo-panel is-wip">
+            <div class="demo-bar">
+              <span class="demo-dots"><i></i><i></i><i></i></span>
+              <span class="demo-url">próximamente</span>
+            </div>
+            <div class="demo-body">
+              <span class="demo-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 6l-6 6 6 6M16 6l6 6-6 6" />
+                </svg>
+              </span>
+              <span class="demo-title">En desarrollo</span>
+              <span class="demo-hint">Interfaz gráfica en desarrollo</span>
+            </div>
           </div>
         </div>
         <div class="project has-media">
